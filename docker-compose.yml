@@ -1,0 +1,21 @@
+version: '2'
+services:
+  app:
+    build: 
+      # use own Dockerfile on the following path
+      .
+    container_name: 'node'
+    ports: 
+      # port mapping. host:container
+      - '3000:3000'
+  nginx:
+    image: 
+      # use the specified image from DockerHub
+      nginx
+    container_name: 'nginx'
+    ports: 
+      - '8080:8080'
+    volumes:
+      # mount host files to container. `ro` as ReadOnly
+      - ./nginx/conf:/etc/nginx/conf.d:ro
+      - ./nginx/www:/var/www:ro
