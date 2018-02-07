@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Docker Sample 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Docker Sample 2</h1>
+  <ul id="list"></ul>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script>
+    const $list = $('#list');
+    $.ajax({
+      url: '/api',
+      success: result => {
+        $list.append(result.map(item => `<li>${item.text}</li>`));
+      }
+    });
+  </script>
+</body>
+
+</html>
