@@ -19,7 +19,7 @@ docker run docker-sample:1.0
 1. create files `nginx/conf/default.conf` and `nginx/www/index.html`
 2. update `app.js`
 3. write `docker-compose.yml`
-4. run `docker-compose build`
+4. run `docker-compose build` and `docker-compose up`
 5. open `http://localhost:8080/` and you should get:
 ```
 - hoge
